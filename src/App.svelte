@@ -57,6 +57,12 @@
     border: solid;
     border-radius: 1000px;
     text-align: center;
-    font-family: 'Courier'
+  }
+
+  button {
+    padding: 4px;
+    border: solid;
+    border-radius: 1000px;
+    text-align: center;
   }
 </style>
