@@ -54,6 +54,8 @@
 
   input {
     padding: 4px;
-    border~radius: 10px;
+    border-radius: 1000px;
+    text-align: center;
+    font-family: 'Courier'
   }
 </style>
