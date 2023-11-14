@@ -51,4 +51,9 @@
     align-items: center;
   }
     /* Tu znajdzie się kod odpowiadający za wygląd strony */
+
+  input {
+    padding: 4px;
+    border~radius: 10px;
+  }
 </style>
