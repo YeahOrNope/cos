@@ -1,6 +1,8 @@
 <script lang="ts">
-  import { HfInference } from "@huggingface/inference"; // importujemy potrzebne narzędzie z biblioteki HuggingFace
+  import { HfInference, imageClassification } from "@huggingface/inference"; // importujemy potrzebne narzędzie z biblioteki HuggingFace
   let userInput: string;
+  let imagePromise: Promise<string>;
+
   const hf = new HfInference(import.meta.env.VITE_HUGGING_FACE_ACCESS_TOKEN); // konfigurujemy narzędzie z naszym kluczem dostępu
 
   async function ask() {
@@ -11,12 +13,38 @@
     });
     return URL.createObjectURL(blob);
   }
+
+  function generateImage() {
+    imagePromise = ask();
+  }
 </script>
 
 <main>
     <!-- Tutaj wpisz własny kod układu strony -->
+    <input bind:value={userInput} />
+    <button on:click={generateImage}>Generate</button>
+    {#if imagePromise}
+      {#await imagePromise}
+        Loading...
+      {:then result}
+        <img width=320 height=320 src={result} alt="Ai generated image"/>
+      {:catch}
+        Oopse! Failed to generate the Image
+        {/await}
+    {:else}
+      No image generated
+    {/if}
 </main>
 
 <style>
+  /* main {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
     /* Tu znajdzie się kod odpowiadający za wygląd strony */
 </style>
