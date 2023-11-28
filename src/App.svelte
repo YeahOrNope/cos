@@ -21,21 +21,22 @@
 
 <main>
     <div class="centered">
-      <input bind:value={userInput} />
-      <button on:click={generateImage}>Generate</button>
-      {#if imagePromise}
-        {#await imagePromise}
+      <div>
+        <input bind:value={userInput} />
+        <button on:click={generateImage}>Generate</button>
+      </div>
+      <div class="generated-image">
+        {#if imagePromise}
+          {#await imagePromise}
           Loading...
-        {:then result}
+          {:then result}
           <img width=320 height=320 src={result} alt="Ai generated image"/>
-        {:catch}
+          {:catch}
           Oops! Failed to generate the Image
           {/await}
-      {:else}
-        No image generated
+        {:else}
+          No image generated
       {/if}
-    </div>
-    <div>
       <input bind:value={userInput} />
       <button on:click={generateImage}>Generate</button>
       {#if imagePromise}
@@ -49,6 +50,7 @@
       {:else}
         No image generated
       {/if}
+      </div>
     </div>
 </main>
 
@@ -83,6 +85,11 @@
   }
 
   .centered {
-    /* background-color: aquamarine; */
+    
+  }
+  
+  .generated-image {
+    color: white;
+    text-align: center;
   }
 </style>
