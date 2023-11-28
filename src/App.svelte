@@ -82,10 +82,16 @@
     border: solid;
     border-radius: 1000px;
     text-align: center;
+    cursor: pointer;
   }
 
   button:hover {
     box-shadow: 0 0 10px black;
+    border: solid 100px red;
+  }
+
+  button:active {
+    background-color: palegoldenrod;
   }
 
   .centered {
