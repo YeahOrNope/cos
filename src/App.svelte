@@ -84,10 +84,17 @@
     text-align: center;
   }
 
+  button:hover {
+    box-shadow: 0 0 10px black;
+  }
+
   .centered {
     background-color: aquamarine;
     padding: 20px;
     border: solid;
+    border-width: 8px;
+    border-radius: 20px;
+    box-shadow: -10px -10px 10px black;
   }
   
   .generated-image {
