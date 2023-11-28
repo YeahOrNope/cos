@@ -20,7 +20,7 @@
 </script>
 
 <main>
-    <div class="">
+    <div class="centered">
       <input bind:value={userInput} />
       <button on:click={generateImage}>Generate</button>
       {#if imagePromise}
@@ -34,21 +34,22 @@
       {:else}
         No image generated
       {/if}
-    </div>div>
-    <!-- Tutaj wpisz własny kod układu strony -->
-    <input bind:value={userInput} />
-    <button on:click={generateImage}>Generate</button>
-    {#if imagePromise}
-      {#await imagePromise}
-        Loading...
-      {:then result}
-        <img width=320 height=320 src={result} alt="Ai generated image"/>
-      {:catch}
-        Oopse! Failed to generate the Image
-        {/await}
-    {:else}
-      No image generated
-    {/if}
+    </div>
+    <div>
+      <input bind:value={userInput} />
+      <button on:click={generateImage}>Generate</button>
+      {#if imagePromise}
+        {#await imagePromise}
+          Loading...
+        {:then result}
+          <img width=320 height=320 src={result} alt="Ai generated image"/>
+        {:catch}
+          Oopse! Failed to generate the Image
+          {/await}
+      {:else}
+        No image generated
+      {/if}
+    </div>
 </main>
 
 <style>
@@ -82,6 +83,6 @@
   }
 
   .centered {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
   }
 </style>
