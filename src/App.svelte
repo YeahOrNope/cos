@@ -85,11 +85,13 @@
   }
 
   .centered {
-    
+    background-color: aquamarine;
+    padding: 20px;
   }
   
   .generated-image {
     color: white;
     text-align: center;
+    margin: 100px;
   }
 </style>
