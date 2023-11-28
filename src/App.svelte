@@ -87,6 +87,7 @@
   .centered {
     background-color: aquamarine;
     padding: 20px;
+    border: solid;
   }
   
   .generated-image {
