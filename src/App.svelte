@@ -20,6 +20,21 @@
 </script>
 
 <main>
+    <div class="">
+      <input bind:value={userInput} />
+      <button on:click={generateImage}>Generate</button>
+      {#if imagePromise}
+        {#await imagePromise}
+          Loading...
+        {:then result}
+          <img width=320 height=320 src={result} alt="Ai generated image"/>
+        {:catch}
+          Oops! Failed to generate the Image
+          {/await}
+      {:else}
+        No image generated
+      {/if}
+    </div>div>
     <!-- Tutaj wpisz własny kod układu strony -->
     <input bind:value={userInput} />
     <button on:click={generateImage}>Generate</button>
@@ -64,5 +79,9 @@
     border: solid;
     border-radius: 1000px;
     text-align: center;
+  }
+
+  .centered {
+    background-color: aquamarine;
   }
 </style>
