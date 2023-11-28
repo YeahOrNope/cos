@@ -62,8 +62,8 @@
     width: 100%;
     height: 100%;
     display: flex;
+    aling-items: center;
     justify-content: center;
-    align-items: center;
   }
     /* Tu znajdzie się kod odpowiadający za wygląd strony */
 
